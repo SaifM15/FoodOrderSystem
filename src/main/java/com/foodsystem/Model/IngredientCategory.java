@@ -3,17 +3,14 @@ package com.foodsystem.Model;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.hibernate.annotations.ManyToAny;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.foodsystem.dto.RestaurantDto;
 
 import jakarta.persistence.CascadeType;
-import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -23,29 +20,22 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class User {
+public class IngredientCategory {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-
-	private String fullName;
-
-	private String email;
-
-	private String password;
 	
-	private USER_ROLE role;
+	private String name;
+	
+//	@JsonIgnore
+//	@ManyToMany
+//	private Restaurant restaurant;
 	
 	@JsonIgnore
-	@OneToMany(cascade =  CascadeType.ALL , mappedBy = "customer")
-	private List<Order> orders = new ArrayList<Order>();
-	
-	@ElementCollection
-	private List<RestaurantDto> Favorites = new ArrayList<>();
+	@ManyToMany(mappedBy = "ingredientCategories")
+	private List<Restaurant> restaurants = new ArrayList<>();
 
-	@OneToMany(cascade = CascadeType.ALL , orphanRemoval = true)
-	private List<Address>addresses = new ArrayList<>();
-	
-	
+	@OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
+	private List<IngredientsItem> ingredients= new ArrayList<>();
 }
