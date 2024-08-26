@@ -66,4 +66,153 @@ public class Restaurant {
 	
 	@ManyToMany
 	private List<IngredientCategory> ingredientCategories = new ArrayList<>();
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public User getOwner() {
+		return owner;
+	}
+
+	public void setOwner(User owner) {
+		this.owner = owner;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getCuisineType() {
+		return cuisineType;
+	}
+
+	public void setCuisineType(String cuisineType) {
+		this.cuisineType = cuisineType;
+	}
+
+	public Address getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+
+	public ContactInformation getContactInformation() {
+		return contactInformation;
+	}
+
+	public void setContactInformation(ContactInformation contactInformation) {
+		this.contactInformation = contactInformation;
+	}
+
+	public String getOpeningHours() {
+		return openingHours;
+	}
+
+	public void setOpeningHours(String openingHours) {
+		this.openingHours = openingHours;
+	}
+
+	public List<Order> getOrders() {
+		return orders;
+	}
+
+	public void setOrders(List<Order> orders) {
+		this.orders = orders;
+	}
+
+	public List<String> getImages() {
+		return images;
+	}
+
+	public void setImages(List<String> images) {
+		this.images = images;
+	}
+
+	public LocalDateTime getRegistrationDate() {
+		return registrationDate;
+	}
+
+	public void setRegistrationDate(LocalDateTime registrationDate) {
+		this.registrationDate = registrationDate;
+	}
+
+	public boolean isOpen() {
+		return open;
+	}
+
+	public void setOpen(boolean open) {
+		this.open = open;
+	}
+
+	public List<Food> getFoods() {
+		return foods;
+	}
+
+	public void setFoods(List<Food> foods) {
+		this.foods = foods;
+	}
+
+	public List<IngredientCategory> getIngredientCategories() {
+		return ingredientCategories;
+	}
+
+	public void setIngredientCategories(List<IngredientCategory> ingredientCategories) {
+		this.ingredientCategories = ingredientCategories;
+	}
+
+	@Override
+	public String toString() {
+		return "Restaurant [id=" + id + ", owner=" + owner + ", name=" + name + ", description=" + description
+				+ ", cuisineType=" + cuisineType + ", address=" + address + ", contactInformation=" + contactInformation
+				+ ", openingHours=" + openingHours + ", orders=" + orders + ", images=" + images + ", registrationDate="
+				+ registrationDate + ", open=" + open + ", foods=" + foods + ", ingredientCategories="
+				+ ingredientCategories + "]";
+	}
+
+	public Restaurant(Long id, User owner, String name, String description, String cuisineType, Address address,
+			ContactInformation contactInformation, String openingHours, List<Order> orders, List<String> images,
+			LocalDateTime registrationDate, boolean open, List<Food> foods,
+			List<IngredientCategory> ingredientCategories) {
+		super();
+		this.id = id;
+		this.owner = owner;
+		this.name = name;
+		this.description = description;
+		this.cuisineType = cuisineType;
+		this.address = address;
+		this.contactInformation = contactInformation;
+		this.openingHours = openingHours;
+		this.orders = orders;
+		this.images = images;
+		this.registrationDate = registrationDate;
+		this.open = open;
+		this.foods = foods;
+		this.ingredientCategories = ingredientCategories;
+	}
+
+	public Restaurant() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+	
 }
