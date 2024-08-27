@@ -6,6 +6,7 @@ import java.util.List;
 import org.hibernate.annotations.ManyToAny;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.foodsystem.dto.RestaurantDto;
 
 import jakarta.persistence.CascadeType;
@@ -33,8 +34,9 @@ public class User {
 
 	private String email;
 
+	@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
 	private String password;
-	
+
 	private USER_ROLE role=USER_ROLE.ROLE_CUSTOMER;
 	
 	@JsonIgnore
