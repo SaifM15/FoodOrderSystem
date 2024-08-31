@@ -59,7 +59,7 @@ public class IngredientCategory {
 		return restaurants;
 	}
 
-	public void setRestaurants(List<Restaurant> restaurants) {
+	public void setRestaurants(	List<Restaurant> restaurants) {
 		this.restaurants = restaurants;
 	}
 
@@ -89,6 +89,7 @@ public class IngredientCategory {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+
 	
 	
 }
