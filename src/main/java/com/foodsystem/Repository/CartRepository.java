@@ -6,4 +6,7 @@ import com.foodsystem.Model.Cart;
 
 public interface CartRepository extends JpaRepository<Cart, Long> {
 
+	public Cart findByCustomerId(Long id);
+
+	
 }
