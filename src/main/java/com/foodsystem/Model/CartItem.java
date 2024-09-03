@@ -33,9 +33,12 @@ public class CartItem {
 	
 	private int quantity;
 	
-	private List<String >ingredients;
+	private List<String>ingredients;
 	
 	private Long totalPrice;
+	
+//	this is change made by me after error
+	private Long customerId;
 
 	public Long getId() {
 		return id;
@@ -85,13 +88,22 @@ public class CartItem {
 		this.totalPrice = totalPrice;
 	}
 
+	public Long getCustomerId() {
+		return customerId;
+	}
+
+	public void setCustomerId(Long customerId) {
+		this.customerId = customerId;
+	}
+
 	@Override
 	public String toString() {
 		return "CartItem [id=" + id + ", cart=" + cart + ", food=" + food + ", quantity=" + quantity + ", ingredients="
-				+ ingredients + ", totalPrice=" + totalPrice + "]";
+				+ ingredients + ", totalPrice=" + totalPrice + ", customerId=" + customerId + "]";
 	}
 
-	public CartItem(Long id, Cart cart, Food food, int quantity, List<String> ingredients, Long totalPrice) {
+	public CartItem(Long id, Cart cart, Food food, int quantity, List<String> ingredients, Long totalPrice,
+			Long customerId) {
 		super();
 		this.id = id;
 		this.cart = cart;
@@ -99,15 +111,14 @@ public class CartItem {
 		this.quantity = quantity;
 		this.ingredients = ingredients;
 		this.totalPrice = totalPrice;
+		this.customerId = customerId;
 	}
 
 	public CartItem() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
-	
-	
+
 	
 
 }

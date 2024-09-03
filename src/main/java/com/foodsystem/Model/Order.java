@@ -50,7 +50,7 @@ public class Order {
 	
 	private int totalItem;
 	
-	private int totalPrice;
+	private Long totalPrice;
 
 	public Long getId() {
 		return id;
@@ -124,11 +124,11 @@ public class Order {
 		this.totalItem = totalItem;
 	}
 
-	public int getTotalPrice() {
+	public Long getTotalPrice() {
 		return totalPrice;
 	}
 
-	public void setTotalPrice(int totalPrice) {
+	public void setTotalPrice(Long totalPrice) {
 		this.totalPrice = totalPrice;
 	}
 
@@ -141,7 +141,7 @@ public class Order {
 	}
 
 	public Order(Long id, User customer, Restaurant restaurant, Long totalAmount, String orderStatus, Date createdAt,
-			Address deliveryAddress, List<OrderItem> items, int totalItem, int totalPrice) {
+			Address deliveryAddress, List<OrderItem> items, int totalItem, Long totalPrice) {
 		super();
 		this.id = id;
 		this.customer = customer;
